@@ -524,7 +524,7 @@ class Client(slixmpp.ClientXMPP):
                                 attributeName  = attributes.get('name')
                                 attributeValue = attributes.text
                                 if attributeName == 'displayName': 
-                                    light_name = attributeValue
+                                    cover_name = attributeValue
                                 if attributeName == 'floor':
                                     floorId = attributeValue
                                 if attributeName == 'room':
