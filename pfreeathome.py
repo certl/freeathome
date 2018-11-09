@@ -324,6 +324,7 @@ class Client(slixmpp.ClientXMPP):
 
                  'B001', // Jalousieaktor 4-fach, REG
                  '1013' // Sensor/ Jalousieaktor 1/1-fach
+                 '1015' // Sensor/ Jalousieaktor 2/1-fach
 
             """
 
@@ -507,8 +508,9 @@ class Client(slixmpp.ClientXMPP):
                             self.devices[scene] = 'scene'   
                             log.info( 'scene  %s %s',scene ,scene_name )    
                 # switch device
-            
-                if deviceId == 'B001' or deviceId == '1013':
+
+                # Jalousieaktoren 4-fach, 2/1-fach and 1/1-fach 
+                if deviceId == 'B001' or deviceId == '1013' or deviceId == '1015':
                     channels = neighbor.find('channels')           
                     if channels is not None:
                         for channel in channels.findall('channel'):
